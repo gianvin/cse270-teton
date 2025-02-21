@@ -38,9 +38,9 @@ class TestSmokeTest():
     self.driver.set_window_size(1151, 1040)
     self.driver.find_element(By.LINK_TEXT,"Directory").click()
     self.driver.find_element(By.ID,"directory-grid").click()
-    assert self.driver.find_element(By.CSS_SELECTOR, ".gold-member:nth-child(9) . p:nth-child(2)").text == "Teton Turf and Tree"
+    assert self.driver.find_element(By.CSS_SELECTOR, ".gold-member:nth-child(odd) > p:nth-child(2)").text == "Teton Turf and Tree"
     self.driver.find_element(By.ID, "directory-list").click()
-    assert self.driver.find_element(By.CSS_SELECTOR, "gold-member:nth-child(9) > p:nth-child(2)").text == "Teton Turf and Tree"
+    assert self.driver.find_element(By.CSS_SELECTOR, "gold-member:nth-child(odd) > p:nth-child(2)").text == "Teton Turf and Tree"
 
   def test_navigatetheHomePage(self):
     self.driver.get("http://127.0.0.1:5500/cse270/teton/1.6/index.html")
