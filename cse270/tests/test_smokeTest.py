@@ -23,7 +23,7 @@ class TestSmokeTest():
     self.driver.get("http://127.0.0.1:5500/cse270/teton/1.6/index.html")
     self.driver.set_window_size(1151, 1040)
     self.driver.find_element(By.LINK_TEXT,"Admin").click()
-    assert self.driver.find_element(By.CSS_SELECTOR, ".myinput:nth-child(2)").test == "Username:"
+    assert self.driver.find_element(By.CSS_SELECTOR, ".myinput:nth-child(2)").text == "Username:"
     elements = self.driver.find_elements(By.ID, "username")
     assert len(elements) > 0
     self.driver.find_element(By.ID, "username").click()
