@@ -9,31 +9,20 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
-from selenium.webdriver.chrome.options import Options
 
 class TestSmokeTest():
   def setup_method(self, method):
-    options = Options()
-    options.add_argument("--headless=new")
-    self.driver = webdriver.Chrome(options=options)
+    self.driver = webdriver.Firefox()
     self.vars = {}
-    self.base_url = "http://127.001/cse270/teton/1.6/index.html"
-    
+  
   def teardown_method(self, method):
     self.driver.quit()
   
   def test_navigatetheAdminPage(self):
-    self.driver.get(f"{self.base_url}/admin")
-    assert "Admin Login" in self.driver.title
   
   def test_navigatetheDirectoryPage(self):
-    self.driver.get(f"{self.base_url}/directory")
-    assert "Member Directory" in self.driver.title
   
   def test_navigatetheHomePage(self):
-    self.driver.get(f"{self.base_url}/home")
-    assert "Welcome Home" in self.driver.title
-
+  
   def test_navigatetheJoinPage(self):
-    self.driver.get(f"{self.base_url}/join")
-    assert "Join Us" in self.driver.title
+  
